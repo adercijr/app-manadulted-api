@@ -1,0 +1,25 @@
+version: '3.8'
+
+services: 
+  app:
+    build: . 
+    command: yarn start
+    ports: 
+      - 3000:3000
+    volumes: 
+      - .:/usr/app
+    links:
+      - db
+    depends_on: 
+      - db
+  db:
+    image: postgres:alpine
+    container_name: api-db-manadulted
+    ports: 
+      - "5432:5432"
+    environment: 
+      POSTGRES_PASSWORD: postgres 
+      POSTGRES_USER: postgres 
+      POSTGRES_DB: manadulted 
+    volumes: 
+      - .:/usr/app
