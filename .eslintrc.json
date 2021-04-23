@@ -23,6 +23,7 @@
     "rules": {
       "prettier/prettier": "error",
       "eslint/prefer-default-export": "off",
+      "class-methods-use-this": "off",
       "no-useless-constructor": "off",
       "@typescript-eslint/no-empty-function": "off",
       "no-underscore-dangle":"off",
