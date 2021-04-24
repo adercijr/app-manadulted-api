@@ -11,6 +11,7 @@ export default class CreateTeachers1619129729797 implements MigrationInterface {
             type: 'varchar',
             isPrimary: true,
             generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'firstName',
@@ -22,6 +23,10 @@ export default class CreateTeachers1619129729797 implements MigrationInterface {
           },
           {
             name: 'classes',
+            type: 'varchar',
+          },
+          {
+            name: 'level',
             type: 'varchar',
           },
         ],

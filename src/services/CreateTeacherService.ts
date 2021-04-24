@@ -6,6 +6,7 @@ interface Request {
   firstName: string;
   lastName: string;
   level: string;
+  classes: string;
 }
 
 class CreateTeacherService {
@@ -13,6 +14,7 @@ class CreateTeacherService {
     firstName,
     lastName,
     level,
+    classes,
   }: Request): Promise<Teacher> {
     const teacherRepository = getCustomRepository(TeacherRepository);
 
@@ -20,6 +22,7 @@ class CreateTeacherService {
       firstName,
       lastName,
       level,
+      classes,
     });
 
     await teacherRepository.save(teacher);

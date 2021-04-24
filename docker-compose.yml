@@ -5,21 +5,23 @@ services:
     build: . 
     command: yarn start
     ports: 
-      - 3000:3000
+      - "8000:8000"
+    links: 
+      - db
     volumes: 
       - .:/usr/app
-    links:
-      - db
-    depends_on: 
-      - db
+    environment:
+      DB_HOST: host.docker.internal
+      DB_USER: postgres
+      DB_PASS: postgres
   db:
     image: postgres:alpine
     container_name: api-db-manadulted
     ports: 
       - "5432:5432"
     environment: 
-      POSTGRES_PASSWORD: postgres 
-      POSTGRES_USER: postgres 
       POSTGRES_DB: manadulted 
-    volumes: 
+      POSTGRES_USER: postgres 
+      POSTGRES_PASSWORD: postgres 
+    volumes:
       - .:/usr/app

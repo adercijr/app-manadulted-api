@@ -4,4 +4,4 @@ import 'reflect-metadata';
 
 createConnection();
 
-App.listen(3000, () => console.log('Executando na porta 3000'));
+App.listen(8000, () => console.log('Executando na porta 8000'));

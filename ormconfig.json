@@ -7,17 +7,17 @@
    "database": "manadulted",
    "synchronize": true,
    "logging": false,
-   "entities": [
-      "src/models/*.ts"
-   ],
    "migrations": [
       "src/database/migration/*.ts"
+   ],
+   "entities": [
+    "src/models/*.ts"
    ],
    "subscribers": [
       "src/database/subscriber/**/*.ts"
    ],
    "cli": {
-      "entitiesDir": "src/models",
+      "entitiesDir": "src/models/teacher",
       "migrationsDir": "src/database/migration",
       "subscribersDir": "src/database/subscriber"
    }
